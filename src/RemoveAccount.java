@@ -1,6 +1,8 @@
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
@@ -11,7 +13,7 @@ import javax.swing.JTextField;
 public class RemoveAccount extends JPanel {
 
 	
-	public RemoveAccount(ArrayList acct)
+	public RemoveAccount(ArrayList<BankAccount> acct)
 	{
 		setLayout(new GridBagLayout());
 
@@ -32,7 +34,27 @@ public class RemoveAccount extends JPanel {
 		JButton confirm = new JButton("Confirm");
 		gbc.gridy++;
 		add(confirm, gbc);
+		JLabel acc = new JLabel("");
+		gbc.gridy++;
+		add(acc, gbc);
+
 		setVisible(true);
+		
+		confirm.addActionListener(new ActionListener()
+		{
+	public void actionPerformed(ActionEvent e)
+	{
+		
+		for(int i = 0; i < acct.size(); i++)
+		if(options.getSelectedItem() == "Checking" && nam.getText().equals((acct.get(i)).getName()))
+		{
+		acc.remove(i);
+		}
+		nam.setText("");
+		options.setSelectedIndex(0);
 	}
+		});
 	}
+}
+	
 

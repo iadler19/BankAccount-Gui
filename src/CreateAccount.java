@@ -58,6 +58,7 @@ public void actionPerformed(ActionEvent e)
 	{
 		CheckingAccount acc = new CheckingAccount(nam.getText(), Integer.parseInt(bal.getText()) , 0, 0, 0);
 				acct.add(acc);
+				System.out.println(acc.toString());
 	}
 	else
 	{
@@ -66,6 +67,7 @@ public void actionPerformed(ActionEvent e)
 	}
 	nam.setText("");
 	bal.setText("");
+	options.setSelectedIndex(0);
 }
 	});
 

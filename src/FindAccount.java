@@ -42,15 +42,15 @@ public class FindAccount extends  JPanel {
 		{
 	public void actionPerformed(ActionEvent e)
 	{
-		for(int i = 0; i < acct.size(); i++)
+		for(BankAccount b: acct)
 		{
 			 String name = nam.getText();
-			if(name == (acct.get(i)).getName())
+			if(name.equals((b).getName()))
 			{
-			(acct.get(i)).toString();
-			}
-				
+			acc.setText((b).toString());
+			}	
 		}
+		nam.setText("");
 		
 	}
 		});
